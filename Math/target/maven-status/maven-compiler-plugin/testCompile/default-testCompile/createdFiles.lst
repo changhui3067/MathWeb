@@ -1,0 +1,8 @@
+service\GetJsServiceTest.class
+controller\AppTests.class
+service\AddhdServiceTest.class
+service\GetAllhdServiceTest.class
+service\GetNewsServiceTest.class
+service\AddNewsServiceTest.class
+service\GetAlljsServiceTest.class
+service\GetAllNewsServiceTest.class

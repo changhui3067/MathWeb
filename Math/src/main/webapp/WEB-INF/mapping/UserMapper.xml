@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Dao.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="Dao.model.User" >
+    <id column="userid" property="userid" jdbcType="TINYINT" />
+    <result column="username" property="username" jdbcType="TINYINT" />
+    <result column="userpwd" property="userpwd" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    userid, username, userpwd
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Byte" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where userid = #{userid,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte" >
+    delete from user
+    where userid = #{userid,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="Dao.model.User" >
+    insert into user (userid, username, userpwd
+      )
+    values (#{userid,jdbcType=TINYINT}, #{username,jdbcType=TINYINT}, #{userpwd,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="Dao.model.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="userpwd != null" >
+        userpwd,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=TINYINT},
+      </if>
+      <if test="userpwd != null" >
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Dao.model.User" >
+    update user
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=TINYINT},
+      </if>
+      <if test="userpwd != null" >
+        userpwd = #{userpwd,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Dao.model.User" >
+    update user
+    set username = #{username,jdbcType=TINYINT},
+      userpwd = #{userpwd,jdbcType=VARCHAR}
+    where userid = #{userid,jdbcType=TINYINT}
+  </update>
+</mapper>

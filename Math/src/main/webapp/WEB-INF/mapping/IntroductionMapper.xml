@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Dao.dao.IntroductionMapper" >
+  <resultMap id="BaseResultMap" type="Dao.model.Introduction" >
+    <id column="introid" property="introid" jdbcType="SMALLINT" />
+    <result column="introtitle" property="introtitle" jdbcType="VARCHAR" />
+    <result column="introtime" property="introtime" jdbcType="TIMESTAMP" />
+    <result column="introcontent" property="introcontent" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    introid, introtitle, introtime, introcontent
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Short" >
+    select 
+    <include refid="Base_Column_List" />
+    from introduction
+    where introid = #{introid,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short" >
+    delete from introduction
+    where introid = #{introid,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="Dao.model.Introduction" >
+    insert into introduction (introid, introtitle, introtime, 
+      introcontent)
+    values (#{introid,jdbcType=TINYINT}, #{introtitle,jdbcType=VARCHAR}, #{introtime,jdbcType=TIMESTAMP}, 
+      #{introcontent,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="Dao.model.Introduction" >
+    insert into introduction
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="introid != null" >
+        introid,
+      </if>
+      <if test="introtitle != null" >
+        introtitle,
+      </if>
+      <if test="introtime != null" >
+        introtime,
+      </if>
+      <if test="introcontent != null" >
+        introcontent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="introid != null" >
+        #{introid,jdbcType=TINYINT},
+      </if>
+      <if test="introtitle != null" >
+        #{introtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="introtime != null" >
+        #{introtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="introcontent != null" >
+        #{introcontent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Dao.model.Introduction" >
+    update introduction
+    <set >
+      <if test="introtitle != null" >
+        introtitle = #{introtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="introtime != null" >
+        introtime = #{introtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="introcontent != null" >
+        introcontent = #{introcontent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where introid = #{introid,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Dao.model.Introduction" >
+    update introduction
+    set introtitle = #{introtitle,jdbcType=VARCHAR},
+      introtime = #{introtime,jdbcType=TIMESTAMP},
+      introcontent = #{introcontent,jdbcType=VARCHAR}
+    where introid = #{introid,jdbcType=TINYINT}
+  </update>
+</mapper>

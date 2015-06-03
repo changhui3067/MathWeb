@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="Math:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Triple_T_0.1.war">
+      <element id="artifact" artifact-name="Math:war exploded" />
+    </root>
+  </artifact>
+</component>
