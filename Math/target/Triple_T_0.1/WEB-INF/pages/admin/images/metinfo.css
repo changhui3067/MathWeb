@@ -10,7 +10,7 @@ hr {border:none;height:1px;}
 body,button,input,select,textarea {font:12px/1 Tahoma,'Microsoft Yahei','Simsun';}
 html,body {font:12px/1.8 'Microsoft YaHei',Tahoma,Verdana,'Simsun';color:#000;background:#fcfcfc;-webkit-text-size-adjust:none;}
 img {border:none;}
-a {color:#1c57c4;text-decoration:underline;}
+a {color:#000;text-decoration:underline;}
 a:hover {color:#1c57c4; cursor: pointer;}
 input.text,textarea.textarea {background:#fff;color:#333;border:1px solid #eee;border-top-color:#999;border-left-color:#999;padding:1px;vertical-align:middle;height:22px;line-height:22px;}
 textarea.textarea {	height:50px;line-height:1.5;}
@@ -68,7 +68,6 @@ span.keylist {
 	background:#fcfcfc;
 }
 #metcmsbox a {
-	color:#000;
 	text-decoration:none;
 }
 #top {
@@ -79,14 +78,12 @@ span.keylist {
 	z-index:9999;
 }
 #top .floatl {
-	width:300px;
-	height:80px;
-	padding:0;
-	overflow:hidden;
+	float:left;
+	height:60px;
+	margin-top: 12px;
+	margin-left:12px;
 }
 #top .floatr {
-	width:100%;
-	margin-left:-300px;
 	height:80px;
 }
 #top .floatr .top-r-box {
@@ -108,6 +105,8 @@ span.keylist {
 	line-height:25px;
 	padding:0px 8px;
 	color:#fff;
+	margin-top: 15px;
+	margin-right: 10px;
 }
 #top .floatr .top-r-t a {
 	color:#fff;
@@ -1725,9 +1724,8 @@ div.showimg {
 	line-height:18px;
 }
 .stat_list {
-	margin:0px 0px 10px;
+	margin:6px 0px 5px;
 	min-height:36px;
-	_height:36px;
 	border-bottom:1px solid #ccc;
 }
 .stat_list li {
@@ -1748,7 +1746,7 @@ div.showimg {
 }
 .stat_list li a {
 	text-decoration:none;
-	color:#555;
+	color:#000;
 }
 .stat_list li a:hover {
 	text-decoration:none;
@@ -2308,9 +2306,7 @@ div.showimg {
 	color:#000;
 }
 .sysadmin .boxlist div.mtsv p a {
-	}#newslist {
-	height:100px;
-}
+	}
 #newslist li {
 	list-style:none;
 	padding-left:3px;
@@ -2431,28 +2427,37 @@ div.showimg {
 .nowawecs{ font-weight:bold; color:#f00!important; font-size:14px;}
 
 
+/*     历史新闻列表              */
+.right_content{
+	width:1000px;
+}
+#newslist {
+	padding-top:15px;
+	padding-left:30px;
+	padding-right:200px;
+}
+.list-none {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#newslist li {
+	padding: 6px 10px;
+	background: url(dt-0.gif) no-repeat left 19px;
+	font: 12px/1.8 Tahoma,Verdana,'Simsun';
+	color: #333;
+}
 
-/*日历控件*/
-.date_selector, .date_selector *{width: auto;height: auto;border: none;background: none;margin: 0;padding: 0;text-align: left;text-decoration: none;}
-.date_selector{background:#fbfbfb;border: 1px solid #ccc;padding: 10px;margin:0;margin-top:-1px;position: absolute;z-index:100000;display:none;border-radius: 3px;box-shadow: 0 0 5px #aaa;box-shadow:0 2px 2px #ccc; width:220px;}
-.date_selector_ieframe{position: absolute;z-index: 99999;display: none;}
-.date_selector .nav{width: 17.5em;}
-.date_selector .nav p{clear: none;}
-.date_selector .month_nav, .date_selector .year_nav{margin: 0 0 3px 0;padding: 0;display: block;position: relative;text-align: center;}
-.date_selector .month_nav{float: left;width: 55%;}
-.date_selector .year_nav{float: right;width: 42%;margin-right: -8px;}
-.date_selector .month_name, .date_selector .year_name{font-weight: bold;line-height: 20px;}
-.date_selector .button{display: block;position: absolute;top: 0;width:18px;height:18px;line-height:16px;font-weight:bold;color:#5985c7;text-align: center;font-size:12px;overflow:hidden;border: 1px solid #ccc;border-radius:2px;}
-.date_selector .button:hover, .date_selector .button.hover{background:#5985c7;color: #fff;cursor: pointer;border-color:#3a930d;}
-.date_selector .prev{left: 0;}
-.date_selector .next{right: 0;}
-.date_selector table{border-spacing: 0;border-collapse: collapse;clear: both;margin: 0; width:220px;}
-.date_selector th, .date_selector td{width: 2.5em;height: 2em;padding: 0 !important;text-align: center !important;color: #666;font-weight: normal;}
-.date_selector th{font-size: 12px;}
-.date_selector td{border:1px solid #f1f1f1;line-height: 2em;text-align: center;white-space: nowrap;color:#5985c7;background: #fff;}
-.date_selector td.today{background: #eee;}
-.date_selector td.unselected_month{color: #ccc;}
-.date_selector td.selectable_day{cursor: pointer;}
-.date_selector td.selected{background:#2b579a;color: #fff;font-weight: bold;}
-.date_selector td.selectable_day:hover, .date_selector td.selectable_day.hover{background:#5985c7;color: #fff;}
-/*-----------------------------------------------------------------------------------*/
+/*  登录页面     */
+#login_frame {
+	width: 225px;
+	height: 200px;
+	margin: 0 auto;
+}
+.input_text{
+	margin: 2.0em 0 2.5em 2em;
+}
+
+.input_button{
+	margin-left:100px;
+}

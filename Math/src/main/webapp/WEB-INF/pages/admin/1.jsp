@@ -8,69 +8,44 @@
 </head>
 
 <body>
-<script type="text/javascript">
-$(function(){
-	$('.date_picker').date_input();
-	})
-</script>
 	<div class="clear"></div>
 	
 	<div class="stat_list">
-	<ul>
-		<li class="now"><a href="1.html" title="基本信息">公告添加</a></li>
-		<li ><a href="1.html" title="系统邮箱配置">以往公告修改</a></li>
-	</ul>
-</div>
+		<ul>
+		<li ><a href="#" title="公告添加">公告添加</a></li>
+		<li class="now"><a href="#" title="以往公告添加">历史公告</a></li>
+		</ul>
+	</div>
 
-
-<div name="myform" target="_self" >
-	<input name="action" type="hidden" value="modify" />
-	<table cellpadding="2" cellspacing="1" class="table">
-
-    <tr> 
-        <td class="text"><span class="bi_tian">*</span>公告标题：</td>
-        <td class="input"><input name="met_webname" type="text" class="text" id="title"/></td>
-    </tr>
-	
-    <tr> 
-        <td class="text"><span class="bi_tian">*</span>发布作者：</td>
-        <td class="input">
-		    <input name="met_weburl" type="text" class="text" id="author"/>
-		 </td>     
-    </tr>
-
-	<tr> 
-        <td class="text"><span class="bi_tian">*</span>添加附件：</td>
-        <td class="input upload">
-		    <input name="met_logo" type="text" class="text" />
-			<input name="met_upsql" type="file" id="file_upload" />
-			<script type='text/javascript'>
-				$(document).ready(function(){
-					metuploadify('#file_upload','upimage','met_logo');
-				});
-			</script>		
-			</td>
-    </tr>	
-
-    <tr>
-      <td class="text"><span class="bi_tian">*</span>公告内容：</td>
-      <td class="input">&nbsp;</td>
-    </tr> 
-    <tr> 
-        <td colspan="2" class="text">
-			<textarea rows="30" cols="50" name="editor01" id="contentText">示例新闻或公告</textarea>
-          	<%--<script type="text/javascript">CKEDITOR.replace('editor01');</script>--%>
-			<%--<span class="tips">100字以内</span>--%>
-		</td>
-    </tr> 
-
-	<tr> 
-        <td class="text"></td>
-	    <td class="submit">
-			<input type="submit" value="保存" class="submit" onclick="OnSubmit(this)" name="${typeid}"/>
-		</td>
-    </tr>
-  </table>
+<div class="right_content">
+	<div id="newslist">
+		<ul class='list-none metlist'>
+			<li class='list top'><span>[2012-07-17]</span><a href='#' title='刚刚发布的一条新闻' target='_self'>请点击这里查看示例新闻</a></li>
+			<li class='list '><span>[2012-07-16]</span><a href='#' title='' target='_self'>2</a></li>
+			<li class='list '><span>[2012-07-16]</span><a href='#' title='' target='_self'>3</a></li>
+			<li class='list '><span>[2012-07-16]</span><a href='#' title='' target='_self'>4</a></li>
+			<li class='list '><span>[2012-07-16]</span><a href='#' title='' target='_self'>5</a></li>
+			<li class='list '><span>[2012-07-16]</span><a href='#' title='' target='_self'>6</a></li>
+			<li class='list '><span>[2012-07-16]</span><a href='#' title='' target='_self'>7</a></li>
+			<li class='list '><span>[2012-07-16]</span><a href='#' title='' target='_self'>8</a></li>
+		</ul>
+		<div id="flip"><style>
+			.digg4  { padding:3px; margin:3px; text-align:center; font-family:Tahoma, Arial, Helvetica, Sans-serif;  font-size: 12px;}
+			.digg4  a,.digg4 span.miy{ border:1px solid #ddd; padding:2px 5px 2px 5px; margin:2px; color:#020202; text-decoration:none;}
+			.digg4  a:hover { border:1px solid #a0a0a0; }.digg4  a:hover { border:1px solid #a0a0a0; }
+			.digg4  span.current {border:1px solid #e0e0e0; padding:2px 5px 2px 5px; margin:2px; color:#000; background-color:#f0f0f0; text-decoration:none;}
+			.digg4  span.disabled { border:1px solid #f3f3f3; padding:2px 5px 2px 5px; margin:2px; color:#000;}
+			.digg4 .disabledfy { font-family: Tahoma, Verdana;}
+		</style>
+			<div class='digg4 metpager_8'>
+				<span class='disabled disabledfy'><b>«</b></span>
+				<span class='disabled disabledfy'>‹</span>
+				<span class='current'>1</span>
+				<span class='disabled disabledfy'>›</span>
+				<span class='disabled disabledfy'><b>»</b></span>
+			</div>
+		</div>
+	</div>
 </div>
 
 </body>
